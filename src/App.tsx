@@ -110,50 +110,21 @@ export default function App() {
             {/* Animated letterforms demonstrating kinetic logo capabilities */}
             <div className="relative flex flex-col items-center">
               <motion.div
-                initial={{ scale: 0.85, opacity: 0 }}
-                animate={{ scale: [0.85, 1.1, 1], opacity: 1 }}
-                transition={{ duration: 1.4, ease: 'easeOut' }}
-                className="flex items-center justify-center mb-6 overflow-visible relative"
-                style={{ overflow: 'visible' }}
-              >
-                {/* Flickering glow while images are still loading */}
-                {loadingProgress < 100 && (
-                  <motion.div
-                    animate={{
-                      opacity: [0.7, 1, 0.1, 1, 0, 1, 0.15, 1, 0.3],
-                      scale:   [1, 1.15, 0.9, 1.2, 0.85, 1.18, 0.95, 1.12, 1],
-                    }}
-                    transition={{
-                      duration: 1.6,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                      times: [0, 0.1, 0.22, 0.35, 0.5, 0.62, 0.75, 0.87, 1],
-                    }}
-                    className="absolute pointer-events-none"
-                    style={{
-                      width: '420px',
-                      height: '420px',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      background:
-                        'radial-gradient(circle, rgba(243,19,101,0.95) 0%, rgba(243,19,101,0.5) 35%, rgba(243,19,101,0.15) 60%, transparent 75%)',
-                      filter: 'blur(18px)',
-                      borderRadius: '50%',
-                      mixBlendMode: 'screen',
-                    }}
+                  initial={{ scale: 0.85, opacity: 0 }}
+                  animate={{ scale: [0.85, 1.1, 1], opacity: 1 }}
+                  transition={{ duration: 1.4, ease: 'easeOut' }}
+                  className="flex items-center justify-center mb-6 overflow-visible"
+                  style={{ overflow: 'visible' }}
+                >
+                  <SyamLogo 
+                    size={190} 
+                    fillColor="#F31365" 
+                    strokeColor="#F31365"
+                    strokeWidth={2}
+                    className="overflow-visible"
+                    animate={true}
                   />
-                )}
-                {/* Custom premium white-and-cerise animated SyamLogo representation */}
-                <SyamLogo
-                  size={190} 
-                  fillColor="#F31365" 
-                  strokeColor="#F31365"
-                  strokeWidth={2}
-                  className="overflow-visible"
-                  animate={true}
-                />
-              </motion.div>
+                </motion.div>
 
               <div className="overflow-hidden mb-1">
                 <motion.h2

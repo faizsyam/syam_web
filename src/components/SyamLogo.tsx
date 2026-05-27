@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useState } from 'react';
 
 interface SyamLogoProps {
   className?: string;
@@ -26,6 +27,7 @@ export default function SyamLogo({
   const gradId = `logo-grad-svg-loader`;
   const maskId = `logo-mask-svg-loader`;
 
+  const [glowReady, setGlowReady] = useState(false);
   return (
     <motion.svg
       width={normalizedWidth}
@@ -34,15 +36,18 @@ export default function SyamLogo({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={`${className}`}
-      initial={animate ? {
-        filter: 'drop-shadow(0 0 0px rgba(243, 19, 101, 0))'
-      } : undefined}
-      animate={animate ? {
-        filter: 'drop-shadow(0 0 50px rgba(243, 19, 101, 1))'
-      } : undefined}
-      transition={animate ? {
-        filter: { delay: 2.8, duration: 1.2, ease: 'easeOut' }
-      } : undefined}
+      initial={animate ? { filter: 'drop-shadow(0 0 0px rgba(243, 19, 101, 0))' } : undefined}
+      animate={animate
+        ? glowReady
+          ? { filter: ['drop-shadow(0 0 50px rgba(243, 19, 101, 1))', 'drop-shadow(0 0 72px rgba(243, 19, 101, 1))'] }
+          : { filter: 'drop-shadow(0 0 50px rgba(243, 19, 101, 1))' }
+        : undefined}
+      transition={animate
+        ? glowReady
+          ? { duration: 2.4, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }
+          : { delay: 2.8, duration: 1.2, ease: 'easeOut' }
+        : undefined}
+      onAnimationComplete={() => { if (animate && !glowReady) setGlowReady(true); }}
       style={{ overflow: 'visible' }}
     >
       <defs>
