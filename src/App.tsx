@@ -9,11 +9,11 @@ import Contact from './components/Contact';
 import SyamLogo from './components/SyamLogo';
 import { Sparkles, ArrowRight, Menu, X } from 'lucide-react';
 
+const LOCAL_IMAGE_MODULES = import.meta.glob('/public/images/*', { eager: true });
+const LOCAL_IMAGES = Object.keys(LOCAL_IMAGE_MODULES).map(path => path.replace('/public', ''));
+
 const IMAGES_TO_PRELOAD = [
-  '/images/syam_hero_unbordered_1779884062489.png',
-  '/images/syam_illustration_1779856834169.png',
-  '/images/syam_character_1779856812200.png',
-  '/images/syam_kinetic_1779856854167.png',
+  ...LOCAL_IMAGES,
   'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
   'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=800&q=80',
   'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&w=800&q=80',
@@ -113,11 +113,39 @@ export default function App() {
                 initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: [0.85, 1.1, 1], opacity: 1 }}
                 transition={{ duration: 1.4, ease: 'easeOut' }}
-                className="flex items-center justify-center mb-6 overflow-visible"
+                className="flex items-center justify-center mb-6 overflow-visible relative"
                 style={{ overflow: 'visible' }}
               >
+                {/* Flickering glow while images are still loading */}
+                {loadingProgress < 100 && (
+                  <motion.div
+                    animate={{
+                      opacity: [0.7, 1, 0.1, 1, 0, 1, 0.15, 1, 0.3],
+                      scale:   [1, 1.15, 0.9, 1.2, 0.85, 1.18, 0.95, 1.12, 1],
+                    }}
+                    transition={{
+                      duration: 1.6,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                      times: [0, 0.1, 0.22, 0.35, 0.5, 0.62, 0.75, 0.87, 1],
+                    }}
+                    className="absolute pointer-events-none"
+                    style={{
+                      width: '420px',
+                      height: '420px',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      background:
+                        'radial-gradient(circle, rgba(243,19,101,0.95) 0%, rgba(243,19,101,0.5) 35%, rgba(243,19,101,0.15) 60%, transparent 75%)',
+                      filter: 'blur(18px)',
+                      borderRadius: '50%',
+                      mixBlendMode: 'screen',
+                    }}
+                  />
+                )}
                 {/* Custom premium white-and-cerise animated SyamLogo representation */}
-                <SyamLogo 
+                <SyamLogo
                   size={190} 
                   fillColor="#F31365" 
                   strokeColor="#F31365"
