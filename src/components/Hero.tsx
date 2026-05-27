@@ -348,7 +348,7 @@ export default function Hero({ onScrollToWork }: HeroProps) {
               className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible"
             >
               <img
-                src="/src/assets/images/syam_hero_3.png"
+                src="/images/syam_hero_3.png"
                 alt="SYAM Creative Studio - Background Illustration"
                 style={{ transform: 'scale(0.67) translate(-40%, -30%)', filter: 'drop-shadow(0 15px 35px rgba(19, 7, 14, 0.16))' }}
                 className="w-full h-full object-contain select-none"
@@ -379,7 +379,7 @@ export default function Hero({ onScrollToWork }: HeroProps) {
               className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible z-20"
             >
               <img
-                src="/src/assets/images/syam_hero_2.png"
+                src="/images/syam_hero_2.png"
                 alt="SYAM Creative Studio - Character Design"
                 style={{ transform: 'scale(0.7) translate(25%, -18%)', filter: 'drop-shadow(0 20px 45px rgba(19, 7, 14, 0.22))' }}
                 className="w-full h-full object-contain select-none"
@@ -410,7 +410,7 @@ export default function Hero({ onScrollToWork }: HeroProps) {
               className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible z-40"
             >
               <img
-                src="/src/assets/images/syam_hero_1.png"
+                src="/images/syam_hero_1.png"
                 alt="SYAM Creative Studio - Kinetic Typography"
                 style={{ transform: 'scale(0.74) translate(-20%, 20%)', filter: 'drop-shadow(0 25px 60px rgba(19, 7, 14, 0.32))' }}
                 className="w-full h-full object-contain select-none"

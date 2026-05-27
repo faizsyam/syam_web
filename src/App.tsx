@@ -10,10 +10,10 @@ import SyamLogo from './components/SyamLogo';
 import { Sparkles, ArrowRight, Menu, X } from 'lucide-react';
 
 const IMAGES_TO_PRELOAD = [
-  '/src/assets/images/syam_hero_unbordered_1779884062489.png',
-  '/src/assets/images/syam_illustration_1779856834169.png',
-  '/src/assets/images/syam_character_1779856812200.png',
-  '/src/assets/images/syam_kinetic_1779856854167.png',
+  '/images/syam_hero_unbordered_1779884062489.png',
+  '/images/syam_illustration_1779856834169.png',
+  '/images/syam_character_1779856812200.png',
+  '/images/syam_kinetic_1779856854167.png',
   'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
   'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=800&q=80',
   'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&w=800&q=80',

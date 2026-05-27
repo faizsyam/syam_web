@@ -7,7 +7,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     title: 'Cosmic Workspace',
     category: 'ai-art',
     categoryLabel: 'AI Art Direction',
-    image: '/src/assets/images/syam_illustration_1779856834169.png',
+    image: '/images/syam_illustration_1779856834169.png',
     description: 'A surreal explore sequence blending architectural precision with organic plant environments. High-concept creative direction exploring workspace serenity.',
     year: '2026',
     featured: true,
@@ -18,7 +18,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     title: 'Neon Nomad',
     category: 'character',
     categoryLabel: 'Character Design',
-    image: '/src/assets/images/syam_character_1779856812200.png',
+    image: '/images/syam_character_1779856812200.png',
     description: 'A stylized, design-forward professional avatar interacting with a hovering interface system. Pure, sleek vectors meets smooth gradient textures.',
     year: '2026',
     featured: true,
@@ -29,7 +29,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     title: 'Typographic Kinetic Trails',
     category: 'typography',
     categoryLabel: 'Kinematic Typography',
-    image: '/src/assets/images/syam_kinetic_1779856854167.png',
+    image: '/images/syam_kinetic_1779856854167.png',
     description: 'Dynamic typographic motion layout. Seamless overlapping ribbon-like lines and structural lettering exploring the rhythm of letterforms.',
     year: '2025',
     featured: true,
@@ -98,7 +98,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Faiz',
     role: 'Creative Director',
     bio: 'I coordinate our creative chaos into structured experiences. Backed by a lifetime of art direction, I bridge illustration and motion design to ensure every project hits a pristine, cohesive visual mark.',
-    image: '/src/assets/images/faiz1.jpg', // Styled portrait reference
+    image: '/images/faiz1.jpg', // Styled portrait reference
     specialties: ['Art Direction', 'Visual Strategy', 'Concept Art', 'AI Direction'],
     socials: {
       instagram: 'https://instagram.com/syamlab',
@@ -112,7 +112,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Mudhhir',
     role: 'Digital Illustrator',
     bio: 'Characters, scenes, and textured stories are my playground. I spend my days sketching line-perfect characters and building vibrant palettes that pull audiences directly into our custom visual worlds.',
-    image: '/src/assets/images/muzhir1.jpg',
+    image: '/images/muzhir1.jpg',
     specialties: ['Character Design', 'Sleek Vector Art', 'Scene Painting', 'Texture Work'],
     socials: {
       instagram: 'https://instagram.com/syamlab',
@@ -126,7 +126,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Irsyad',
     role: 'Motion Designer',
     bio: 'If it doesn’t move, I make it. From buttery-smooth micro-interactions to complex cinematic keyframes and rhythmic typography, I bring ideas to life across time and user actions.',
-    image: '/src/assets/images/irsyad1.jpg',
+    image: '/images/irsyad1.jpg',
     specialties: ['Kinematic Typography', 'Logo Animation', 'SVG Motion', 'Interactive Layouts'],
     socials: {
       instagram: 'https://instagram.com/syamlab',
