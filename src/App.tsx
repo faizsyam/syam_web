@@ -145,7 +145,6 @@ export default function App() {
                 className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#F7F4F0]/60 text-center leading-loose mt-3"
               >
                 <div className="mb-1 flex items-center justify-center gap-1.5">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#F31365]/80 animate-pulse" />
                   Creative Craft
                 </div>
                 <div className="opacity-80">and Motion Studio</div>
@@ -163,13 +162,13 @@ export default function App() {
             scrolledPastHero
               ? 'top-4 bg-transparent border-transparent backdrop-blur-none shadow-none pointer-events-none'
               : scrolled 
-                ? 'top-3 py-3.5 px-6 bg-white/35 border-white/80 backdrop-blur-3xl border-2 shadow-[0_25px_60px_-15px_rgba(19,7,14,0.15)] rounded-2xl w-[92vw]' 
-                : 'top-6 py-5 px-6 bg-white/15 border-white/45 backdrop-blur-2xl border-2 shadow-[0_15px_40px_rgba(19,7,14,0.06)] rounded-2xl w-[92vw]'
+                ? 'top-3 py-2 px-6 bg-white/35 border-white/80 backdrop-blur-3xl border-2 shadow-[0_25px_60px_-15px_rgba(19,7,14,0.15)] rounded-2xl w-[92vw]' 
+                : 'top-6 py-4 px-6 bg-white/15 border-white/45 backdrop-blur-2xl border-2 shadow-[0_15px_40px_rgba(19,7,14,0.06)] rounded-2xl w-[92vw]'
           }`}>
             {/* Logo Pill */}
             <div className={`transition-all duration-500 rounded-2xl flex items-center pointer-events-auto h-full ${
               scrolledPastHero
-                ? 'bg-white/35 border border-white/50 shadow-[0_12px_28px_rgba(19,7,14,0.08)] backdrop-blur-2xl px-4 py-2.5 rounded-full hover:scale-105 hover:bg-white/55 hover:border-white/75'
+                ? 'bg-white/35 border border-white/50 shadow-[0_12px_28px_rgba(19,7,14,0.08)] backdrop-blur-2xl px-4 py-2 rounded-full hover:scale-105 hover:bg-white/55 hover:border-white/75'
                 : 'bg-transparent border-transparent'
             }`}>
               <button
@@ -194,7 +193,7 @@ export default function App() {
             {/* Desktop anchors row Pill */}
             <nav className={`hidden md:flex items-center gap-8 font-mono text-xs font-semibold tracking-wider text-plum-black/70 transition-all duration-500 pointer-events-auto ${
               scrolledPastHero
-                ? 'bg-white/35 border border-white/50 shadow-[0_12px_28px_rgba(19,7,14,0.08)] backdrop-blur-2xl px-7 py-4 rounded-full hover:bg-white/55 hover:border-white/75'
+                ? 'bg-white/35 border border-white/50 shadow-[0_12px_28px_rgba(19,7,14,0.08)] backdrop-blur-2xl px-7 py-2 rounded-full hover:bg-white/55 hover:border-white/75'
                 : 'bg-transparent border-transparent'
             }`}>
               <button

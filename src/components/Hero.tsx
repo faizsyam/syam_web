@@ -37,6 +37,26 @@ export default function Hero({ onScrollToWork }: HeroProps) {
   const collageX = useTransform(parallaxX, [-400, 400], [-25, 25]);
   const collageY = useTransform(parallaxY, [-400, 400], [-25, 25]);
 
+  // Layer-specific parallax transformations for the 3 PNG layers
+  const bgX = useTransform(parallaxX, [-400, 400], [-10, 10]);
+  const bgY = useTransform(parallaxY, [-400, 400], [-10, 10]);
+
+  // Label layers placed intermediate to add a float-above effect
+  const bgLabelX = useTransform(parallaxX, [-400, 400], [-16, 16]);
+  const bgLabelY = useTransform(parallaxY, [-400, 400], [-16, 16]);
+
+  const midX = useTransform(parallaxX, [-400, 400], [-25, 25]);
+  const midY = useTransform(parallaxY, [-400, 400], [-25, 25]);
+
+  const midLabelX = useTransform(parallaxX, [-400, 400], [-33, 33]);
+  const midLabelY = useTransform(parallaxY, [-400, 400], [-33, 33]);
+
+  const fgX = useTransform(parallaxX, [-400, 400], [-45, 45]);
+  const fgY = useTransform(parallaxY, [-400, 400], [-45, 45]);
+
+  const fgLabelX = useTransform(parallaxX, [-400, 400], [-55, 55]);
+  const fgLabelY = useTransform(parallaxY, [-400, 400], [-55, 55]);
+
   const floatX = useTransform(parallaxX, [-400, 400], [20, -20]);
   const floatY = useTransform(parallaxY, [-400, 400], [20, -20]);
 
@@ -142,7 +162,7 @@ export default function Hero({ onScrollToWork }: HeroProps) {
             className={isIntroFinished ? "overflow-visible" : "overflow-hidden"}
           >
             {/* Main Kinematic Title */}
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-display font-bold tracking-tighter leading-[0.8] text-plum-black flex flex-col gap-0 select-none overflow-visible py-3 -my-3">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[7.2rem] font-display font-bold tracking-tighter leading-[0.8] text-plum-black flex flex-col gap-0 select-none overflow-visible py-3 -my-3">
               <span className={`flex pb-1.5 text-cerise flex-wrap transition-all duration-300 py-1.5 -my-1.5 overflow-visible ${isIntroFinished ? "overflow-visible" : "overflow-hidden"}`}>
                 {studioNameList.map((char, index) => (
                   <motion.span
@@ -170,7 +190,7 @@ export default function Hero({ onScrollToWork }: HeroProps) {
                     rotate: 6,
                   }}
                   transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  className="inline-flex items-end self-end ml-3 sm:ml-4 md:ml-6 h-[2.2rem] sm:h-[3rem] md:h-[4rem] lg:h-[5.1rem] cursor-pointer -translate-y-0.5 sm:-translate-y-1 md:-translate-y-1.5 lg:-translate-y-[0.55rem] opacity-80 hover:opacity-100 transition-opacity duration-300"
+                  className="inline-flex items-end self-end ml-3 sm:ml-4 md:ml-6 h-[1.8rem] sm:h-[2.5rem] md:h-[3.3rem] lg:h-[4.3rem] cursor-pointer -translate-y-0.5 sm:-translate-y-0.8 md:-translate-y-1 lg:-translate-y-[0.45rem] opacity-80 hover:opacity-100 transition-opacity duration-300"
                 >
                   <SyamLogo
                     fillColor={isLogoHovered ? "#F31365" : "none"}
@@ -210,7 +230,7 @@ export default function Hero({ onScrollToWork }: HeroProps) {
             transition={{ delay: 0.5 }}
             className="max-w-xl space-y-4"
           >
-            <p className="text-lg sm:text-xl md:text-2xl text-plum-black/85 font-sans leading-relaxed tracking-tight">
+            <p className="text-base sm:text-lg md:text-xl text-plum-black/85 font-sans leading-relaxed tracking-tight">
               We work across{' '}
               <span className="relative inline-block font-semibold text-cerise transition-all duration-300 hover:text-coral hover:-translate-y-0.5 border-b-2 border-cerise/20 cursor-comment">
                 graphic design
@@ -230,7 +250,7 @@ export default function Hero({ onScrollToWork }: HeroProps) {
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.7 }}
-            className="flex flex-wrap items-center gap-4 pt-4"
+            className="flex flex-wrap items-center gap-4 pt-3"
           >
             <motion.button
               onClick={onScrollToWork}
@@ -254,12 +274,12 @@ export default function Hero({ onScrollToWork }: HeroProps) {
                 transition: { duration: 0.2 }
               }}
               whileTap={{ scale: 0.96 }}
-              className="px-8 py-4 bg-cerise hover:bg-coral text-warm-beige font-display font-semibold rounded-full pointer-events-auto flex items-center gap-3 text-sm tracking-wider uppercase group transition-colors duration-350"
+              className="px-6 py-3 bg-cerise hover:bg-coral text-warm-beige font-display font-semibold rounded-full pointer-events-auto flex items-center gap-2.5 text-xs tracking-wider uppercase group transition-colors duration-350"
             >
               <span>Examine Our Work</span>
-              <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
+              <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-1 transition-transform duration-300" />
             </motion.button>
-            <span className="text-xs font-mono text-plum-black/50 tracking-wider">
+            <span className="text-[10px] font-mono text-plum-black/50 tracking-wider">
               [ SCROLL TO EXPLORE ]
             </span>
           </motion.div>
@@ -267,7 +287,6 @@ export default function Hero({ onScrollToWork }: HeroProps) {
 
         {/* Cinematic Illustration Collage Showcase Column */}
         <div className="lg:col-span-5 relative w-full flex items-center justify-center lg:justify-end">
-          {/* Subtle slow-pulse ambient radial lights behind the collage image */}
           <motion.div 
             animate={{
               opacity: [0.1, 0.18, 0.1],
@@ -292,60 +311,127 @@ export default function Hero({ onScrollToWork }: HeroProps) {
             }}
             className="absolute -left-4 -bottom-4 w-80 h-80 rounded-full bg-coral/20 blur-[80px] pointer-events-none"
           />
+          {/* Subtle Geometric Background Decorations */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none opacity-[0.28]">
+            {/* Concentric rotating drafting circle */}
+            <motion.div
+              style={{ x: bgX, y: bgY }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 75, repeat: Infinity, ease: "linear" }}
+              className="absolute w-[440px] h-[440px] rounded-full border border-dashed border-plum-black/8 flex items-center justify-center"
+            >
+              <div className="w-[360px] h-[360px] rounded-full border border-dashed border-plum-black/5" />
+              <div className="w-[240px] h-[240px] rounded-full border border-cerise/10 flex items-center justify-center">
+                <div className="absolute w-[180px] h-[180px] rounded-full border border-dashed border-coral/8" />
+              </div>
+            </motion.div>
+            
+            {/* Architectural draft lines & coordinates */}
+            <motion.div
+              style={{ x: gridX, y: gridY }}
+              className="absolute w-[480px] h-[480px] border border-plum-black/5 pointer-events-none"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-plum-black/5" />
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 h-px w-full bg-plum-black/5" />
+              <div className="absolute top-2 left-2 text-[8px] font-mono text-plum-black/25 tracking-wider">[ LAT_S.06 ]</div>
+              <div className="absolute bottom-2 right-2 text-[8px] font-mono text-plum-black/25 tracking-wider">[ ROT_Y_PRX ]</div>
+            </motion.div>
+          </div>
 
-          <motion.div
-            style={{ x: collageX, y: collageY }}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-            className="relative w-full max-w-lg lg:max-w-none flex items-center justify-center select-none"
-          >
-            {/* The primary transparent-background PNG illustration of our studio characters */}
-            <img
-              src="/src/assets/images/syam_hero_unbordered_1779884062489.png"
-              alt="SYAM Creative Studio Illustration"
-              className="w-full h-auto max-h-[460px] lg:max-h-[530px] object-contain will-change-transform hover:scale-[1.03] transition-transform duration-[1500ms] ease-out select-none"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
+          <div className="relative w-full h-[350px] sm:h-[460px] lg:h-[530px] max-w-lg lg:max-w-none select-none flex items-center justify-center overflow-visible">
+            {/* Layer 1: Background Illustration (Cosmic Workspace) */}
+            <motion.div
+              style={{ x: bgX, y: bgY }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+              className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible"
+            >
+              <img
+                src="/src/assets/images/syam_hero_3.png"
+                alt="SYAM Creative Studio - Background Illustration"
+                style={{ transform: 'scale(0.67) translate(-40%, -30%)', filter: 'drop-shadow(0 15px 35px rgba(19, 7, 14, 0.16))' }}
+                className="w-full h-full object-contain select-none"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
 
-          {/* Floating abstract geometrical shapes reinforcing dimensionality */}
-          <motion.div
-            style={{ x: floatX, y: floatY }}
-            animate={{
-              rotate: [0, 15, -15, 0],
-              scale: [1, 1.06, 0.94, 1],
-            }}
-            transition={{
-              duration: 9,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute -top-6 -left-6 w-16 h-16 bg-coral/10 rounded-2xl border border-coral/20 pointer-events-none backdrop-blur-sm hidden sm:block flex items-center justify-center font-mono text-[9px] text-coral/40"
-          >
-            VEC_C
-          </motion.div>
+            {/* Layer 2: Background Label (Web Development) */}
+            <motion.div
+              style={{ x: bgLabelX, y: bgLabelY }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
+              className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible z-10"
+            >
+              <div className="absolute left-[-15%] top-[30%] px-3 py-1.5 bg-[#13070E]/85 border border-[#13070E]/20 text-[#F7F4F0] text-[10px] font-mono rounded-lg shadow-[0_8px_30px_rgba(19,7,14,0.15)] tracking-widest uppercase backdrop-blur-md flex items-center gap-1.5 pointer-events-auto">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A5F]" />
+                Web Development
+              </div>
+            </motion.div>
 
-          <motion.div
-            style={{ x: floatX, y: floatY }}
-            animate={{
-              y: [0, -5, 0],
-              scale: [1, 1.04, 1],
-              boxShadow: [
-                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-                "0 15px 25px -5px rgba(243, 19, 101, 0.25), 0 10px 10px -5px rgba(243, 19, 101, 0.05)",
-                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
-              ]
-            }}
-            transition={{
-              duration: 4.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute -bottom-4 right-12 px-4 py-2 bg-cerise text-warm-beige text-[11px] font-mono rounded-lg shadow-md pointer-events-none hidden sm:block uppercase tracking-wider"
-          >
-            ● MOTION READY
-          </motion.div>
+            {/* Layer 3: Midground Character (Neon Nomad) */}
+            <motion.div
+              style={{ x: midX, y: midY }}
+              initial={{ opacity: 0, y: 35, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ type: "spring", stiffness: 100, damping: 18, delay: 0.5 }}
+              className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible z-20"
+            >
+              <img
+                src="/src/assets/images/syam_hero_2.png"
+                alt="SYAM Creative Studio - Character Design"
+                style={{ transform: 'scale(0.7) translate(25%, -18%)', filter: 'drop-shadow(0 20px 45px rgba(19, 7, 14, 0.22))' }}
+                className="w-full h-full object-contain select-none"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+
+            {/* Layer 4: Midground Label (Digital Illustration) */}
+            <motion.div
+              style={{ x: midLabelX, y: midLabelY }}
+              initial={{ opacity: 0, y: 25, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ type: "spring", stiffness: 100, damping: 18, delay: 0.65 }}
+              className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible z-30"
+            >
+              <div className="absolute right-[-5%] top-[45%] px-3 py-1.5 bg-[#FF5A5F]/95 border border-[#FF5A5F]/20 text-[#F7F4F0] text-[10px] font-mono rounded-lg shadow-[0_8px_30px_rgba(255,90,95,0.15)] tracking-widest uppercase backdrop-blur-md flex items-center gap-1.5 pointer-events-auto">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F31365]" />
+                Digital Illustration
+              </div>
+            </motion.div>
+
+            {/* Layer 5: Foreground Typography (Kinetic Trails) */}
+            <motion.div
+              style={{ x: fgX, y: fgY }}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
+              className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible z-40"
+            >
+              <img
+                src="/src/assets/images/syam_hero_1.png"
+                alt="SYAM Creative Studio - Kinetic Typography"
+                style={{ transform: 'scale(0.74) translate(-20%, 20%)', filter: 'drop-shadow(0 25px 60px rgba(19, 7, 14, 0.32))' }}
+                className="w-full h-full object-contain select-none"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+
+            {/* Layer 6: Foreground Label (Motion Design) */}
+            <motion.div
+              style={{ x: fgLabelX, y: fgLabelY }}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.85 }}
+              className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none will-change-transform overflow-visible z-50"
+            >
+              <div className="absolute left-[5%] bottom-[25%] px-3 py-1.5 bg-[#F31365]/95 border border-[#F31365]/20 text-[#F7F4F0] text-[10px] font-mono rounded-lg shadow-[0_8px_30px_rgba(243,19,101,0.15)] tracking-widest uppercase backdrop-blur-md flex items-center gap-1.5 pointer-events-auto">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F7F4F0] animate-ping" style={{ animationDuration: '3s' }} />
+                Motion Design
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
 

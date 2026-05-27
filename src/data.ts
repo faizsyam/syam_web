@@ -98,7 +98,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Faiz',
     role: 'Creative Director',
     bio: 'I coordinate our creative chaos into structured experiences. Backed by a lifetime of art direction, I bridge illustration and motion design to ensure every project hits a pristine, cohesive visual mark.',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&h=600&q=80', // Styled portrait reference
+    image: '/src/assets/images/faiz1.jpg', // Styled portrait reference
     specialties: ['Art Direction', 'Visual Strategy', 'Concept Art', 'AI Direction'],
     socials: {
       instagram: 'https://instagram.com/syamlab',
@@ -112,7 +112,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Mudhhir',
     role: 'Digital Illustrator',
     bio: 'Characters, scenes, and textured stories are my playground. I spend my days sketching line-perfect characters and building vibrant palettes that pull audiences directly into our custom visual worlds.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&h=600&q=80',
+    image: '/src/assets/images/muzhir1.jpg',
     specialties: ['Character Design', 'Sleek Vector Art', 'Scene Painting', 'Texture Work'],
     socials: {
       instagram: 'https://instagram.com/syamlab',
@@ -126,7 +126,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Irsyad',
     role: 'Motion Designer',
     bio: 'If it doesn’t move, I make it. From buttery-smooth micro-interactions to complex cinematic keyframes and rhythmic typography, I bring ideas to life across time and user actions.',
-    image: 'https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&w=600&h=600&q=80',
+    image: '/src/assets/images/irsyad1.jpg',
     specialties: ['Kinematic Typography', 'Logo Animation', 'SVG Motion', 'Interactive Layouts'],
     socials: {
       instagram: 'https://instagram.com/syamlab',
