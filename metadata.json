@@ -1,0 +1,6 @@
+{
+  "name": "SYAM Creative Lab",
+  "description": "A design-forward, motion-aware, and visually expansive creative studio specializing in digital illustration, motion design, character design, and kinematic typography.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
